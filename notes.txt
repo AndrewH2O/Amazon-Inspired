@@ -120,3 +120,12 @@ go to Authentication , at near top tab says sign-in-method open it up see list s
 
 test123123@gmail.com password
 test789@gmail.com password
+
+stripe + firebase
+
+invsetigate react spring
+
+stripe
+
+useHistory programatically adds /payment
+http://localhost:3000/payment
