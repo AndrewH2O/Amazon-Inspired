@@ -8,9 +8,9 @@ function Checkout() {
 
   const [{basket, user },dispatch] = useStateValue();
   
-  const FancyCheckoutProduct = forwardRef((item, ref)=>(
-    <CheckoutProduct ref={ref} key={item.basketKey} basketKey={item.basketKey} id={item.id} title={item.title} image={item.image} price={item.price} rating={item.rating}></CheckoutProduct>
-  ));
+  // const FancyCheckoutProduct = forwardRef((item, ref)=>(
+  //   <CheckoutProduct ref={ref} key={item.basketKey} basketKey={item.basketKey} id={item.id} title={item.title} image={item.image} price={item.price} rating={item.rating}></CheckoutProduct>
+  // ));
 
   return (
     <div className="checkout">
