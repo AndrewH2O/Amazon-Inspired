@@ -1,0 +1,122 @@
+steps
+setup react
+setup firebase
+setup react router
+build navbar header
+build the banner
+build product component
+introduce react context api
+setup add to basket button
+build checkout page
+build subtotal component
+build logn page
+deploy on Firebase
+
+
+
+in firebase added new project amazon-clone 
+then clicked on web icon </>
+added an internal name amazon-clone-cp
+
+sets up the tooling globally already done this
+npm install -g firebase-tools
+
+from firebase deploy
+Deploy to Firebase Hosting
+You can deploy now or later. To deploy now, open a terminal window, then navigate to or create a root directory for your web app.
+
+Sign in to Google
+
+1) firebase login
+Initiate your project
+Run this command from your app’s root directory:
+
+
+2) firebase init
+When you’re ready, deploy your web app
+Put your static files (e.g., HTML, CSS, JS) in your app’s deploy directory (the default is “public”). Then, run this command from your app’s root directory:
+
+
+3) firebase deploy
+After deploying, view your app at clone-b5ea1.web.app
+
+Need help? Check out the Hosting docs
+
+We get config details by first opening up left hand menu burger then click on config
+then click on project settings
+scroll down to your apps section and where it says firebase settings click config and copy config
+
+
+setup react router
+https://reactrouter.com/web/guides/quick-start
+npm install react-router-dom
+
+route with a wildcard
+<Route path='/checkout/:someRandomId/page'>  eg /checkout/???/page
+
+Router higher order component wraps children ie route
+
+Header rfce snippet
+
+BEM naming convention className="header__searchInput"
+
+wrap amazon img click link part routing
+Link SPA refresh unlike a href does refresh page
+import { Link } from "react-router-dom"; In markup <Link to="/">
+
+npm install @material-ui/core
+npm install @material-ui/icons
+
+https://material-ui.com/components/material-icons/
+import SearchIcon from '@material-ui/icons/Search';
+or import { SearchIcon } from '@@material-ui/icons';
+
+dipslay inline on top 
+display flex
+
+styling header
+flex: 1   // use as much room as it again maximise space
+object-fit: contain;   // make sure the image never looses aspect ratio when screen shrinks
+
+SEO p or span tags , span no styling
+
+parent align items center and using display flex means childen get this as well
+
+make nav bar stick stay at top when scrolling 
+.header {
+  background-color: #131921;
+  display: flex;
+  align-items: center;
+  position: sticky; ///      better than fixed always stuck at top sticky gives better anim
+  top: 0; ///
+  z-index: 100; /// 
+}
+
+Home component rfce react functional component
+
+Products
+
+context Api - prop drilling avoids 
+
+react context api or redux
+dispatch add items
+
+
+baskt? optional chaining  in case due to page delay the item is first null
+
+click add to basket disptach action
+the reducer listens does mutable update
+
+
+npm install react-currency-format
+
+context API
+
+click btn dispatch action into data layer - reducer listens then performs various actions
+
+Firebase 
+go to Authentication , at near top tab says sign-in-method open it up see list select email/password and enable 
+
+
+test123123@gmail.com password
+test789@gmail.com password
