@@ -56,11 +56,11 @@ function Home() {
           image="https://images-na.ssl-images-amazon.com/images/I/61KZUu2TOrL.jpg"
         />
         <Product
-          id="62319841"
-          title="LEGO 31313 Mindstorms EV3 Robotics Kit, 5 in 1 App Controlled Model with Programmable Interactive Toy Robot"
-          price={249.97}
+          id="97899931"
+          title="iSunday Simulated Dog Model, Realistic Yorkie Dog Simulation Toy Dog Puppy"
+          price={24.96}
           rating={5}
-          image="https://images-na.ssl-images-amazon.com/images/I/91Z6nH%2BZ9pL._AC_SL1500_.jpg"
+          image="https://images-na.ssl-images-amazon.com/images/I/61CCe4ap0eL._AC_SL1001_.jpg"
         />
         <Product
           id="10319841"
@@ -74,12 +74,13 @@ function Home() {
         {/* Product has id, title , price, rating, image */}
         {/* Product */}
         <Product
-          id="97899931"
-          title="iSunday Simulated Dog Model, Realistic Yorkie Dog Simulation Toy Dog Puppy"
-          price={24.96}
+          id="62319841"
+          title="LEGO 31313 Mindstorms EV3 Robotics Kit, 5 in 1 App Controlled Model with Programmable Interactive Toy Robot"
+          price={249.97}
           rating={5}
-          image="https://images-na.ssl-images-amazon.com/images/I/61CCe4ap0eL._AC_SL1001_.jpg"
+          image="https://images-na.ssl-images-amazon.com/images/I/91Z6nH%2BZ9pL._AC_SL1500_.jpg"
         />
+        
         <Product
           id="67821876"
           title="MSI NVIDIA GEFORCE RTX 2080Ti GAMING X TRIO Graphics Card"

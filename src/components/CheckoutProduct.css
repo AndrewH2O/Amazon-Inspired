@@ -5,7 +5,7 @@
 }
 
 .checkoutProduct__info {
-  padding-left: 20px;;
+  padding-left: 20px;
 }
 
 .checkoutProduct__info > button:hover {
@@ -15,13 +15,10 @@
 
 .checkoutProduct__info > button {
   background: #f0c14b;
-  border-radius: 4px;
   border: 1px solid;
   margin-top: 10px;
   border-color: #a88734 #9c7e31 #846a29;
-  color:#111;
-  font-size:small;
-  height:20px;
+  color: #111;
 }
 
 .checkoutProduct__image {
