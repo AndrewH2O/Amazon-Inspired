@@ -29,7 +29,7 @@ function App() {
     // will only run once when the app component loads...
     // observes auth login logout
     auth.onAuthStateChanged((authUser) => {
-      console.log("THE USER IS >>>> ", authUser);
+      
       if (authUser) {
         // the user logged in or was logged in
         dispatch({

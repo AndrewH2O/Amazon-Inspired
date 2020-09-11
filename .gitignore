@@ -5,8 +5,10 @@
 /.pnp
 .pnp.js
 firebase.js
+.env
 .firebaserc
-firebase.json
+/.firebase
+
 hosting.YnVpbGQ.cache
 
 # testing
@@ -27,3 +29,8 @@ yarn-debug.log*
 yarn-error.log*
 
 stripe-testKey.*
+
+
+
+ui-debug.log
+firebase-debug.log

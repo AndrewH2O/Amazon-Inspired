@@ -3,11 +3,11 @@ import stripeKey from "./stripe-testKey.json";
 
 const instance = axios.create({
   // THE API (cloud function) URL
-  baseUrl: '...' // API URL - cloud function
-});
+  baseURL: 'http://localhost:5001/clone-b5ea1/us-central1/api'
+})
 
 export const getStripeKey = ()=>{
-  return stripeKey["test-key"];
+  return process.env.REACT_APP_STRIPE_TEST_KEY;
 };
   
 export default instance;
