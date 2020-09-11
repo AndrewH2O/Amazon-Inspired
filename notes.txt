@@ -136,3 +136,6 @@ app.js
 <Elements stripe={promise}>
               <Payment />
             </Elements>
+
+
+init cloud functions cd function index.js build express app and host on cloud fn             
