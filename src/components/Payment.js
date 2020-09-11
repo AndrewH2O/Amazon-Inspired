@@ -13,7 +13,9 @@ function Payment() {
         <h1>
           Checkout (<Link to="/checkout">{basket?.length} items</Link>)
         </h1>
-        {/** Paymnet section - delivery address */}
+
+
+        {/** Payment section - delivery address */}
         <div className="payment__section">
           <div className="payment__title">
             <h3>Delivery Address</h3>
@@ -24,7 +26,7 @@ function Payment() {
             <p>Los Angeles, CA</p>
           </div>
         </div>
-        {/** Paymnet section - review items */}
+        {/** Payment section - review items */}
         <div className="payment__section">
           <div className="payment__title">
             <h3>Review items and delivery</h3>
