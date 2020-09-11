@@ -129,3 +129,10 @@ stripe
 
 useHistory programatically adds /payment
 http://localhost:3000/payment
+
+stripe
+higher oreder component
+app.js
+<Elements stripe={promise}>
+              <Payment />
+            </Elements>

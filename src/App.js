@@ -10,30 +10,41 @@ import Payment from "./components/Payment";
 import { auth } from "./firebase";
 import { useStateValue } from "./dataLayer/StateProvider";
 
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+import axios, { getStripeKey } from "./axios";
+
+// public key
+const promise = loadStripe(getStripeKey());
+
 function App() {
+
+  
   const [{}, dispatch] = useStateValue();
 
   // listener who is logged in
   useEffect(() => {
+    console.log(promise);
     // will only run once when the app component loads...
     // observes auth login logout
-    auth.onAuthStateChanged(authUser => {
-      console.log('THE USER IS >>>> ', authUser);
+    auth.onAuthStateChanged((authUser) => {
+      console.log("THE USER IS >>>> ", authUser);
       if (authUser) {
         // the user logged in or was logged in
         dispatch({
-          type: 'SET_USER',
-          user: authUser
-        })
+          type: "SET_USER",
+          user: authUser,
+        });
       } else {
         // user is logged out
         dispatch({
-          type: 'SET_USER',
-          user: null
-        })
+          type: "SET_USER",
+          user: null,
+        });
       }
-    })
-  },[])
+    });
+  }, []);
 
   return (
     <Router>
@@ -41,14 +52,16 @@ function App() {
         <Switch>
           <Route path="/checkout">
             <Header />
-            <Checkout/>
+            <Checkout />
           </Route>
           <Route path="/login">
             <Login />
           </Route>
           <Route path="/payment">
             <Header></Header>
-            <Payment />
+            <Elements stripe={promise}>
+              <Payment />
+            </Elements>
           </Route>
           <Route path="/">
             <Header />

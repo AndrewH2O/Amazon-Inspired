@@ -9,7 +9,6 @@ export const initialState = {
 export const getBasketTotal = (basket) => basket?.reduce((total, i)=> total + i.price,0);
 
 
-
 // listens to the dispatches and triggers actions
 // mutable updates in react - need default state
 const reducer = (state, action) => {
