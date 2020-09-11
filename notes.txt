@@ -142,7 +142,7 @@ init cloud functions cd function index.js build express app and host on cloud fn
 
 firebase emulators:start
 example end point
-http://localhost:5001/clone-b5ea1/us-central1/api
+
 
 
 2.26
