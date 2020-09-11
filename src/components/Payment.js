@@ -1,18 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import CheckoutProduct from "./CheckoutProduct";
 import CurrencyFormat from "react-currency-format";
 import { getBasketTotal } from "../dataLayer/reducer";
 import { useStateValue } from "../dataLayer/StateProvider";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+import axios from "../axios";
 
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
 function Payment() {
   const [{ basket, user }, dispatch] = useStateValue();
+  const history = useHistory();
+
 
   // hooks
   const stripe = useStripe();
+
+  // pull in elements incl CardElement
   const elements = useElements();
 
   // handling cc state
@@ -23,22 +28,57 @@ function Payment() {
   const [succeeded, setSucceeded] = useState(false);
   const [processing, setProcessing] = useState("");
 
-   
+  // accepting payt
+  const [clientSecret, setClientSecret] = useState(true);
+
+
+  // responds to basket change dependency
+  useEffect(() => {
+    // change basket need ne secret
+    const getClientSecret = async () => {
+      const response = await axios({
+        method: "post",
+        // stripe expects the toatl in a currency subunits
+        url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
+      });
+      setClientSecret(response.data.clientSecret);
+    };
+    getClientSecret();
+  }, [basket]);
+
+
 
   const handleSubmit = async (event) => {
     //stripe part
     event.preventDefault();
     // avoids multiple clicks to buy btn
     setProcessing(true);
-    
+
+    const payload = await stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+          card: elements.getElement(CardElement),
+        },
+        // we get the response back destructure out payt confmn details
+      }).then(({ paymentIntent }) => {
+        // payment intent = payment confirmation
+        setSucceeded(true);
+        setError(null);
+        setProcessing(false);
+
+        // navigation
+        history.replace("/orders");
+      });
   };
 
+  
   const handleChange = (event) => {
     // Listen for changes in the CardElement
     // and display any errors as the customer types their card details
     setDisabled(event.empty);
     setError(event.error ? event.error.message : "");
   };
+
+
 
   return (
     <div className="payment">
