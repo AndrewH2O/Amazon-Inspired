@@ -158,3 +158,16 @@ cloud firestore
 create database
 test mode
 pick location
+
+Add db - we setup and export the db from firebase.js based on config settings
+we get from properties (left hand menu)
+on firestore cloud
+
+use it in payments once we get payment suceeded from stripe confirmCardPayment 
+see payments.js
+
+set up db users, user.id, orders(collection) document (paymentIntent.id)
+
+*** WATCH DAMN FORMATTING IN VSCODE DOESN'T SCREW UP ***** Payments 
+as it split following over two lines strip. which broke 
+confirmCardPaymentconst payload = await stripe.confirmCardPayment(clientSecret, {

@@ -6,6 +6,7 @@ import { getBasketTotal } from "../dataLayer/reducer";
 import { useStateValue } from "../dataLayer/StateProvider";
 import { Link, useHistory } from "react-router-dom";
 import axios from "../axios";
+import { db } from "../firebase";
 
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 
@@ -44,8 +45,10 @@ function Payment() {
     getClientSecret();
   }, [basket]);
 
+  // check prior to stripe paymentConfirmation
   console.log("the secret is >>>>>>", clientSecret);
-
+  // check with db
+  console.log('🧑', user);
 
   const handleSubmit = async (event) => {
     //stripe part
@@ -61,7 +64,16 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         // payment intent = payment confirmation
-          
+        db.collection("users")
+          .doc(user?.uid)
+          .collection("orders")
+          .doc(paymentIntent.id)
+          .set({
+            basket: basket,
+            amount: paymentIntent.amount,
+            created: paymentIntent.created,
+          });
+
         // if (result.error) {
         //   // Show error to your customer (e.g., insufficient funds)
         //   console.log("ERROR >> STRIPE >>> ",result.error.message);
@@ -80,11 +92,11 @@ function Payment() {
         setError(null);
         setProcessing(false);
 
-        dispatch({ type: 'EMPTY_BASKET'})
+        dispatch({ type: "EMPTY_BASKET" });
 
         // navigation
         history.replace("/orders");
-      })
+      });
   };
 
   const handleChange = (event) => {
