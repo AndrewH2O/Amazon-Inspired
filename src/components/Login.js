@@ -25,7 +25,6 @@ function Login() {
     auth
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
-        console.log(auth);
         // force a redirect
         if (auth) {
           history.push("/");

@@ -2,7 +2,7 @@ import axios from "axios";
 import stripeKey from "./stripe-testKey.json";
 
 const instance = axios.create({
-  // THE API (cloud function) URL
+  // THE API (cloud function) URL base address
   baseURL: 'http://localhost:5001/clone-b5ea1/us-central1/api'
 })
 

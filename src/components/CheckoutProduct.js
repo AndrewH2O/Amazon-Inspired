@@ -30,8 +30,8 @@ function CheckoutProduct({basketKey, id, image, title, price, rating}) {
               // fill with an empty value
               Array(rating)
                 .fill()
-                .map((_) => (
-                  <p>⭐</p>
+                .map((_, index) => (
+                  <p key={index}>⭐</p>
                 ))
             }
         </div>

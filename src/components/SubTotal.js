@@ -13,9 +13,9 @@ function SubTotal() {
   const[{basket}, dispatch]= useStateValue();
   
   return (
-    <div class="subtotal">
+    <div className="subtotal">
 
-      <div class="subtotal__head">
+      <div className="subtotal__head">
         
       </div>
 

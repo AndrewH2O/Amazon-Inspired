@@ -27,7 +27,7 @@ function Product({ key, id, title, image, price, rating }) {
   };
 
   return (
-    <div className="product">
+    <div className="product" easing="ease_out">
       <div className="product__infoOuter">
         <div className="product__info">
           <p className="product__infoTitle">{title}</p>
@@ -40,8 +40,8 @@ function Product({ key, id, title, image, price, rating }) {
               // fill with an empty value
               Array(rating)
                 .fill()
-                .map((_) => (
-                  <p>⭐</p>
+                .map((_, index) => (
+                  <p key={index}>⭐</p>
                 ))
             }
           </div>
