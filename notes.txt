@@ -170,4 +170,7 @@ set up db users, user.id, orders(collection) document (paymentIntent.id)
 
 *** WATCH DAMN FORMATTING IN VSCODE DOESN'T SCREW UP ***** Payments 
 as it split following over two lines strip. which broke 
-confirmCardPaymentconst payload = await stripe.confirmCardPayment(clientSecret, {
+confirmCardPaymentconst payload = await stripe.confirmCardPayment(clientSecret, {...
+
+
+npm i moment   for timestamp 

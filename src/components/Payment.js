@@ -150,7 +150,7 @@ function Payment() {
           <div className="payment__title">
             <h3>Payment Method</h3>
           </div>
-          <div className="payment_details">
+          <div className="payment__details">
             {/** stripe */}
             <form onSubmit={handleSubmit}>
               <CardElement onChange={handleChange}></CardElement>
