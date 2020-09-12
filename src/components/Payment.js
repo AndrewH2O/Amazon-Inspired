@@ -46,7 +46,7 @@ function Payment() {
 
   console.log("the secret is >>>>>>", clientSecret);
 
-  
+
   const handleSubmit = async (event) => {
     //stripe part
     event.preventDefault();
@@ -61,7 +61,7 @@ function Payment() {
       })
       .then(({ paymentIntent }) => {
         // payment intent = payment confirmation
-
+          
         // if (result.error) {
         //   // Show error to your customer (e.g., insufficient funds)
         //   console.log("ERROR >> STRIPE >>> ",result.error.message);
@@ -79,6 +79,8 @@ function Payment() {
         setSucceeded(true);
         setError(null);
         setProcessing(false);
+
+        dispatch({ type: 'EMPTY_BASKET'})
 
         // navigation
         history.replace("/orders");

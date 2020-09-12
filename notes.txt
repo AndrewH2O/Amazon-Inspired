@@ -147,3 +147,14 @@ example end point
 
 2.26
 firebase deploy --only hosting
+
+once stripe is hooked up checkout
+https://dashboard.stripe.com/test/dashboard
+the payments should come through
+
+redirect order push order to db using firbase functions
+
+cloud firestore
+create database
+test mode
+pick location
