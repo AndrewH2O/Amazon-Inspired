@@ -2,7 +2,9 @@
   display:flex;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-bottom:8px;
 }
+
 
 .checkoutProduct__info {
   padding-left: 20px;
@@ -12,6 +14,7 @@
   background-color: #aa876f;
   cursor:hand;
 }
+
 
 .checkoutProduct__info > button {
   background: #f0c14b;
@@ -36,3 +39,22 @@
   font-weight: 800;
 }
 
+
+
+
+@media only screen and (max-width: 640px), only screen and (max-device-width: 480px) {
+  /* For mobile phones: */
+  .checkoutProduct {
+    display:flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .checkoutProduct__image {
+    object-fit: contain;
+    width:100%;
+    height:180px;
+  }
+  
+}

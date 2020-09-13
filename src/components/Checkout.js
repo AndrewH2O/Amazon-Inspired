@@ -1,9 +1,11 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import SubTotal from "./SubTotal";
 import { useStateValue } from "../dataLayer/StateProvider";
 import CheckoutProduct from "./CheckoutProduct";
 import FlipMove from 'react-flip-move';
 import "./Checkout.css";
+import "./Animate.css";
+
 function Checkout() {
 
   const [{basket, user },dispatch] = useStateValue();
@@ -20,7 +22,6 @@ function Checkout() {
           src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423592668_.jpg"
           alt=""
         />
-
         <div>
           <h2 className="checkout__title">Your Shopping basket</h2>
           <FlipMove>

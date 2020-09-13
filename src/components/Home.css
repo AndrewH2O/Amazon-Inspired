@@ -7,6 +7,7 @@
 /* part of getting products to overlap with header banner */
 .home__row {
   display: flex;
+  flex-direction: row;
   z-index: 1;
   margin-left: 5px;
   margin-right: 5px;
@@ -20,4 +21,25 @@
   mask-image: linear-gradient(to Bottom, rgba(0,0,0,1), rgba(0,0,0,0));
   z-index: -1;
   margin-bottom: -150px;
+}
+
+
+@media only screen and (max-width: 640px), screen and (max-device-width: 480px) {
+  /* For mobile phones: */
+  .home__image {
+    width:100%;
+    mask-image: linear-gradient(to Bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+    z-index: -1;
+    margin-bottom: -100px;
+  }
+  
+  .home__row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      flex-direction: column;
+      margin:0;
+    }
+  
+    
 }

@@ -43,3 +43,9 @@
   margin-top: 10px;
   color: #111;
 }
+
+@media only screen and (max-width: 922px), only screen and (max-device-width: 480px) {
+  .subtotal {
+    margin-left: 0;
+  }
+}

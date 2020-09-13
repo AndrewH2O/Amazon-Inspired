@@ -3,6 +3,7 @@ import { useStateValue } from '../dataLayer/StateProvider';
 import { db } from "../firebase";
 import Order from "./Order";
 import './Orders.css';
+import './AnimateNone.css';
 
 function Orders() {
   const [orders, setOrders] = useState([]);

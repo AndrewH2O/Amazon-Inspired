@@ -1,0 +1,5 @@
+.checkoutProduct:hover {
+  transform: scale(1.01);
+  box-shadow: 0px 5px 12px -7px rgba(0, 0, 0, 0.21);
+}
+

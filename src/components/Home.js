@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-import FlipMove from "react-flip-move";
+
 
 import "./Home.css";
 
@@ -17,6 +17,13 @@ function Home() {
         {/* Product has id, title , price, rating, image */}
         {/* Product */}
         <Product
+          id="42321341"
+          title="Samsung Galaxy Tab S7+ Wifi Android Tablet Mystic Black"
+          price={799.98}
+          rating={5}
+          image="https://images-na.ssl-images-amazon.com/images/I/816sWBc5fTL._AC_SL1500_.jpg"
+        />
+        <Product
           id="12321341"
           title="Hedera Helix, Set of 3, Ivy, White Coloured Leaves, 9cm Pot"
           price={6.96}
@@ -30,13 +37,6 @@ function Home() {
           rating={5}
           image="https://images-na.ssl-images-amazon.com/images/I/71Yd8LIYkYL._AC_SL1200_.jpg"
         />
-        <Product
-          id="42321341"
-          title="Samsung Galaxy Tab S7+ Wifi Android Tablet Mystic Black"
-          price={799.98}
-          rating={5}
-          image="https://images-na.ssl-images-amazon.com/images/I/816sWBc5fTL._AC_SL1500_.jpg"
-        />
       </div>
       <div className="home__row">
         {/* Product has id, title , price, rating, image */}
@@ -48,13 +48,7 @@ function Home() {
           rating={4}
           image="https://images-na.ssl-images-amazon.com/images/I/715Tt8JTyFL._AC_SL1500_.jpg"
         />
-        <Product
-          id="62394741"
-          title="A Guide to the Good Life: The Ancient Art of Stoic Joy"
-          price={10.21}
-          rating={5}
-          image="https://images-na.ssl-images-amazon.com/images/I/61KZUu2TOrL.jpg"
-        />
+        
         <Product
           id="97899931"
           title="iSunday Simulated Dog Model, Realistic Yorkie Dog Simulation Toy Dog Puppy"
@@ -69,10 +63,6 @@ function Home() {
           rating={5}
           image="https://images-na.ssl-images-amazon.com/images/I/61y1h8yb5CL._AC_SL1280_.jpg"
         />
-      </div>
-      <div className="home__row">
-        {/* Product has id, title , price, rating, image */}
-        {/* Product */}
         <Product
           id="62319841"
           title="LEGO 31313 Mindstorms EV3 Robotics Kit, 5 in 1 App Controlled Model with Programmable Interactive Toy Robot"
@@ -80,7 +70,17 @@ function Home() {
           rating={5}
           image="https://images-na.ssl-images-amazon.com/images/I/91Z6nH%2BZ9pL._AC_SL1500_.jpg"
         />
-        
+      </div>
+      <div className="home__row">
+        {/* Product has id, title , price, rating, image */}
+        {/* Product */}
+        <Product
+          id="62394741"
+          title="A Guide to the Good Life: The Ancient Art of Stoic Joy"
+          price={10.21}
+          rating={5}
+          image="https://images-na.ssl-images-amazon.com/images/I/61KZUu2TOrL.jpg"
+        />
         <Product
           id="67821876"
           title="MSI NVIDIA GEFORCE RTX 2080Ti GAMING X TRIO Graphics Card"

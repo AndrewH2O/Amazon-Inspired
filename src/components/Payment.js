@@ -41,7 +41,7 @@ function Payment() {
         url: `/payments/create?total=${getBasketTotal(basket) * 100}`,
       });
       setClientSecret(response.data.clientSecret);
-    };
+    }
     getClientSecret();
   }, [basket]);
 
@@ -54,7 +54,7 @@ function Payment() {
     //stripe part
     event.preventDefault();
     // avoids multiple clicks to buy btn
-    setProcessing(true);
+    //(clientSecret.length>5) ? setProcessing(true) : setProcessing(false);
 
     const payload = await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -72,7 +72,7 @@ function Payment() {
             basket: basket,
             amount: paymentIntent.amount,
             created: paymentIntent.created,
-          });
+          })
 
         // if (result.error) {
         //   // Show error to your customer (e.g., insufficient funds)
@@ -96,6 +96,12 @@ function Payment() {
 
         // navigation
         history.replace("/orders");
+      }).catch((error) => {
+        
+        console.log(error);
+        setSucceeded(false);
+        setError(true);
+        setProcessing(false);
       });
   };
 

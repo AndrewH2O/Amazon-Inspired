@@ -1,6 +1,7 @@
 .header {
   background-color: #131921;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   position: sticky;
   top: 0;
