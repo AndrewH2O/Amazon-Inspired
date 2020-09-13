@@ -16,24 +16,32 @@ app.use(express.json()); // use json data
 // - API routes
 app.get("/", (request, response) => response.status(200).send("hello world"));
 
-app.post("/payments/create", async (request, response) => {
+app.post("/payments/create", async (request, response, next) => {
   // payments from client front end sends /payments/create?total where
   // total is query param (its in sub units e.g. pence)
   // request params are an alternative
-  const total = request.query.total;
+  try {
+    const total = request.query.total;
+    try {
+      console.log(`Payment Request Recieved BOOM!!! for this amount >>> ${total} `);
+    
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: total, // subunits of the currency
+        currency: "usd",
+      });
+    
+      // OK - Created
+      response.status(201).send({
+        clientSecret: paymentIntent.client_secret,
+      });
+    } catch (error) {
+      return response.status(404).send(error.message);
+    }
+  } catch (error) {
+    return next(error)
+  }
   
-  console.log(`Payment Request Recieved BOOM!!! for this amount >>> ${total} `);
 
-  const paymentIntent = await stripe.paymentIntents.create({
-    amount: total, // subunits of the currency
-    currency: "usd",
-  });
-
-  // OK - Created
-  response.status(201).send({
-    clientSecret: paymentIntent.client_secret,
-  });
-  
 });
 
 
